@@ -14,7 +14,7 @@ export default function Home() {
         <Link href="/"><a>Home</a></Link> |
         <Link href="about"><a>About</a></Link> |
         <Link href="service"><a>Services</a></Link> | 
-        <Link href="product/P002"><a>products</a></Link>
+        <Link href="product/P001"><a>products</a></Link>
 
         </center>
       </div>
