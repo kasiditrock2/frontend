@@ -861,13 +861,15 @@ const AdminSidebar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <a href="/users" className="nav-link">
+                <Link href="/users">
+                  <a className="nav-link">
                   <i className="nav-icon fas fa-th" />
                   <p>
                     จัดการสมาชิก
                     <span className="right badge badge-danger">New</span>
                   </p>
-                </a>
+                  </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <Link href="#">

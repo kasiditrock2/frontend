@@ -14,10 +14,14 @@ export default class MyDocument extends Document {
             />
             <title>AdminLTE 3 | Dashboard 3</title>
             {/* Google Font: Source Sans Pro */}
-            <link
-              rel="stylesheet"
-              href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
-            />
+            <div>
+              <link
+                href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap"
+                rel="stylesheet"
+              />
+              ;
+            </div>
+
             <link
               rel="stylesheet"
               href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap"
