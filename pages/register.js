@@ -4,19 +4,46 @@ export default function register() {
   return (
     <center>
       <div>
-      <body class="hold-transition login-page">
+        {/* Google Font: Source Sans Pro */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+        />
+        {/* Font Awesome */}
+        <link
+          rel="stylesheet"
+          href="../../plugins/fontawesome-free/css/all.min.css"
+        />
+        {/* icheck bootstrap */}
+        <link
+          rel="stylesheet"
+          href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css"
+        />
+        {/* Theme style */}
         <link rel="stylesheet" href="../../dist/css/adminlte.min.css" />
-        <div className="login-box">
-          <div className="login-logo">
+        <body class="hold-transition register-page">
+        <div className="register-box">
+          <div className="register-logo">
             <a href="../../index2.html">
               <b>Admin</b>LTE
             </a>
           </div>
-          {/* /.login-logo */}
           <div className="card">
-            <div className="card-body login-card-body">
-              <p className="login-box-msg">Sign in to start your session</p>
-              <form action="../../index3.html" method="post">
+            <div className="card-body register-card-body">
+              <p className="login-box-msg">Register a new membership</p>
+              <form action="../../index.html" method="post">
+                <div className="input-group mb-3">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Full name"
+                  />
+                  <div className="input-group-append">
+                    <div className="input-group-text">
+                      <span className="fas fa-user" />
+                    </div>
+                  </div>
+                </div>
                 <div className="input-group mb-3">
                   <input
                     type="email"
@@ -41,46 +68,61 @@ export default function register() {
                     </div>
                   </div>
                 </div>
+                <div className="input-group mb-3">
+                  <input
+                    type="password"
+                    className="form-control"
+                    placeholder="Retype password"
+                  />
+                  <div className="input-group-append">
+                    <div className="input-group-text">
+                      <span className="fas fa-lock" />
+                    </div>
+                  </div>
+                </div>
                 <div className="row">
                   <div className="col-8">
                     <div className="icheck-primary">
-                      <input type="checkbox" id="remember" />
-                      <label htmlFor="remember">Remember Me</label>
+                      <input
+                        type="checkbox"
+                        id="agreeTerms"
+                        name="terms"
+                        defaultValue="agree"
+                      />
+                      <label htmlFor="agreeTerms">
+                        I agree to the <a href="#">terms</a>
+                      </label>
                     </div>
                   </div>
                   {/* /.col */}
                   <div className="col-4">
                     <button type="submit" className="btn btn-primary btn-block">
-                      Sign In
+                      Register
                     </button>
                   </div>
                   {/* /.col */}
                 </div>
               </form>
-              <div className="social-auth-links text-center mb-3">
+              <div className="social-auth-links text-center">
                 <p>- OR -</p>
                 <a href="#" className="btn btn-block btn-primary">
-                  <i className="fab fa-facebook mr-2" /> Sign in using Facebook
+                  <i className="fab fa-facebook mr-2" />
+                  Sign up using Facebook
                 </a>
                 <a href="#" className="btn btn-block btn-danger">
-                  <i className="fab fa-google-plus mr-2" /> Sign in using
-                  Google+
+                  <i className="fab fa-google-plus mr-2" />
+                  Sign up using Google+
                 </a>
               </div>
-              {/* /.social-auth-links */}
-              <p className="mb-1">
-                <a href="forgot-password.html">I forgot my password</a>
-              </p>
-              <p className="mb-0">
-                <a href="register.html" className="text-center">
-                  Register a new membership
-                </a>
-              </p>
+              <a href="login.html" className="text-center">
+                I already have a membership
+              </a>
             </div>
-            {/* /.login-card-body */}
+            {/* /.form-box */}
           </div>
+          {/* /.card */}
         </div>
-        {/* /.login-box */}
+        {/* /.register-box */}
         {/* jQuery */}
         {/* Bootstrap 4 */}
         {/* AdminLTE App */}
