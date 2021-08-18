@@ -25,7 +25,7 @@ export default function register() {
         <div className="register-box">
           <div className="register-logo">
             <a href="../../index2.html">
-              <b>Admin</b>LTE
+              <b>Admin</b>NextJS
             </a>
           </div>
           <div className="card">
@@ -114,8 +114,8 @@ export default function register() {
                   Sign up using Google+
                 </a>
               </div>
-              <a href="login.html" className="text-center">
-                I already have a membership
+              <a href="/login" className="text-center">
+                I already have a user account
               </a>
             </div>
             {/* /.form-box */}

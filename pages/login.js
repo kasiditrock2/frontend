@@ -25,13 +25,13 @@ export default function login() {
         <div className="login-box">
           <div className="login-logo">
             <a href="../../index2.html">
-              <b>Admin</b>LTE
+              <b>Admin</b>NextJS
             </a>
           </div>
           {/* /.login-logo */}
           <div className="card">
             <div className="card-body login-card-body">
-              <p className="login-box-msg">Sign in to start your session</p>
+              <p className="login-box-msg">Login page</p>
               <form action="../../index3.html" method="post">
                 <div className="input-group mb-3">
                   <input
@@ -88,8 +88,8 @@ export default function login() {
                 <a href="forgot-password.html">I forgot my password</a>
               </p>
               <p className="mb-0">
-                <a href="register.html" className="text-center">
-                  Register a new membership
+                <a href="/register" className="text-center">
+                  Register a new user account
                 </a>
               </p>
             </div>
