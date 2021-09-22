@@ -99,7 +99,7 @@ export default function Home() {
           <Tab label="Item One" />
           <Tab label="Item Two" />
           <Tab label="Item Three" />
-        </Tabs>
+        </Tabs> 
 
         </center>
       </div>
