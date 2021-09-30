@@ -881,7 +881,7 @@ const AdminSidebar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/users">
+                <Link href="Users">
                   <a className="nav-link">
                   <i className="nav-icon fas fa-th" />
                   <p>
