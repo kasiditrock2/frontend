@@ -5,30 +5,56 @@ import AdminHOC from '../../../components/layouts/admin.hoc';
 import { useState } from 'react';
 import axios from 'axios';
 
+const Home = ({ allCategories, errorCategories }) => {
+  const [modifiedData, setModifiedData] = useState({
+    firstname: '',
+    description: '',
+    categories: [],
+  });
+  const [errorRestaurants, setErrorRestaurants] = useState(null);
 
-const EditUsers = ({ users, error, key }) => {
-  if (error) {
-    return <div>An error occured: {error.message}</div>;
+  const handleChange = ({ target: { name, value } }) => {
+    setModifiedData(prev => ({
+      ...prev,
+      [firstname]: value,
+    }));
+  };
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post('http://localhost:1337/members', modifiedData);
+      console.log(response);
+    } catch (error) {
+      setErrorRestaurants(error);
+    }
+  };
+
+  const renderCheckbox = category => {
+    const { categories } = modifiedData;
+    const isChecked = categories.includes(category.id);
+    const handleCheckboxChange = () => {
+      if (!categories.includes(category.id)) {
+        handleChange({ target: { name: 'categories', value: categories.concat(category.id) } });
+      } else {
+        handleChange({
+          target: { name: 'categories', value: categories.filter(v => v !== category.id) },
+        });
+      }
+    };
+    
+  };
+  if (errorCategories) {
+    return <div>An error occured (categories): {errorCategories.message}</div>;
   }
-
-  const [firstname, setfirstName] = useState("");
-
-  //const [id, ${data.id}] = useState("");
-  const EditUser = () => {
-    Axios.get('https://api-itcmtc.herokuapp.com/members', {
-      firstname: firstname,
-      Lastname: lastname,
-      Username: uername,
-      password: password
-    })
+  if (errorRestaurants) {
+    return <div>An error occured (restaurants): {errorRestaurants.message}</div>;
   }
-
-
-
   return (
     <div>
       <AdminHOC>
-        {users.map(data => (
+        {allCategories.map(data => (
           <div className="content-wrapper">
             <body class="hold-transition register-page">
               <div className="register-box">
@@ -71,7 +97,7 @@ const EditUsers = ({ users, error, key }) => {
 
                     </form>
                     <div className="social-auth-links text-center">
-                      <button type="button" class="btn btn-success" onClick={EditUsers} >บันทึกการแก้ไข</button>
+                      <button type="button" class="btn btn-success" onClick={handleChange} >บันทึกการแก้ไข</button>
                     </div>
 
 
@@ -88,15 +114,16 @@ const EditUsers = ({ users, error, key }) => {
       </AdminHOC>
     </div>
   );
-}
+};
 
-EditUsers.getInitialProps = async ctx => {
+Home.getInitialProps = async ctx => {
   try {
-    const res = await axios.get('https://api-itcmtc.herokuapp.com/members');
-    const users = res.data;
-    return { users };
-  } catch (error) {
-    return { error };
+    const res = await axios.get('http://localhost:1337/categories');
+    const allCategories = res.data;
+    return { allCategories };
+  } catch (errorCategories) {
+    return { errorCategories };
   }
 };
-export default EditUsers;
+
+export default Home;

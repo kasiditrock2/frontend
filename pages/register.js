@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Axios from 'axios';
 import { useState } from 'react'; //เก็บข้อมูลไว้ในตัวแปร state
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2' 
 
 
 const Register = () => {
@@ -16,7 +16,7 @@ const [username, setuserName] = useState("");
 const [password, setPassword] = useState("");
 
 const addMember = () => {
-  Axios.post('http://localhost:1337/members', {
+  Axios.post('https://api-itcmtc.herokuapp.com/members', {
       firstname: firstname,
       lastname: lastname,
       username: username,
