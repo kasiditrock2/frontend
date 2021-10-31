@@ -14,7 +14,7 @@ class MyDocument extends Document {
                     <div>
                         <meta charSet="utf-8" />
                         <meta name="viewport" content="width=device-width, initial-scale=1" />
-                        <title>ระบบบริหารจัดการข้อมูล</title>
+                        <title>Datavase management</title>
                         <div>
                         
                             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" />
